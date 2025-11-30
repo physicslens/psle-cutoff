@@ -476,12 +476,13 @@
 
     <!-- Posting group filters (top) -->
     <div class="card">
-      <label>Posting group filters</label>
+      <label>Select Posting Groups</label>
       <div class="search-row" id="pgFiltersTop">
         <label><input type="checkbox" id="topFilterIP" checked> IP</label>
         <label><input type="checkbox" id="topFilterPG3" checked> PG3</label>
         <label><input type="checkbox" id="topFilterPG2" checked> PG2</label>
         <label><input type="checkbox" id="topFilterPG1" checked> PG1</label>
+        <label><input type="checkbox" id="topShowAffSplit" checked> Show affiliation</label>
         
       </div>
       
@@ -489,7 +490,7 @@
 
     <!-- Search + year chips -->
     <div class="card">
-      <label>2. Search & years</label>
+      <label>Find Schools and Years</label>
       <div class="search-row">
         <div class="search-input-wrap">
           <span class="search-icon">🔍</span>
@@ -515,12 +516,11 @@
       </div>
     </div>
 
-    <!-- Chart: Posting Groups combined -->
+    <!-- Chart: Posting Groups with affiliation split lines -->
     <div class="card">
-      <label>3. Posting Groups — combined chart</label>
+      <label>Posting Groups by Affiliation</label>
       <p style="font-size: 0.8rem; color: var(--muted); margin-top: 2px;">
-        Shows PG1, PG2, PG3 cut-offs together on the same axes per selected school and active years,
-        with Sec 1 intake for context.
+        Affiliated lines use solid style; non-affiliated lines use dashed style. The PSLE cohort appears for context.
       </p>
       <div class="chart-wrap">
         <canvas id="trendChart"></canvas>
@@ -529,7 +529,7 @@
 
     <!-- Table -->
     <div class="card">
-      <label>4. School list</label>
+      <label>School Table</label>
       <p style="font-size: 0.8rem; color: var(--muted); margin-top: 2px;">
         Use the checkbox to select schools to display in the chart.
         Click on headers to sort.
@@ -573,7 +573,8 @@
     let rawRows = [];
     let filteredRows = [];
     let headers = [];
-    let chartInstance = null;
+    let chartAffInstance = null;
+    let chartNonAffInstance = null;
 
     let activeYears = new Set();
     let searchTerm = "";
@@ -614,6 +615,7 @@
     const topFilterPG3 = document.getElementById("topFilterPG3");
     const topFilterPG2 = document.getElementById("topFilterPG2");
     const topFilterPG1 = document.getElementById("topFilterPG1");
+    const topShowAffSplit = document.getElementById("topShowAffSplit");
     
     const cutoffMinSlider = document.getElementById("cutoffMinSlider");
     const cutoffMaxSlider = document.getElementById("cutoffMaxSlider");
@@ -987,11 +989,25 @@
 
 
     function updateChart() {
-      if (chartInstance) { chartInstance.destroy(); chartInstance = null; }
+      if (chartAffInstance) { chartAffInstance.destroy(); chartAffInstance = null; }
+      if (chartNonAffInstance) { chartNonAffInstance.destroy(); chartNonAffInstance = null; }
 
       // Determine years in filtered rows that are active will be computed below
 
       const getColorForIndex = (i) => `hsl(${(i * 57) % 360} 80% 45%)`;
+      const hueForString = (s) => {
+        let h = 0;
+        for (let i = 0; i < s.length; i++) {
+          h = (h * 31 + s.charCodeAt(i)) % 360;
+        }
+        return h;
+      };
+      const colorForDataset = (schoolName, key, aff) => {
+        const base = `${schoolName}|${key}|${aff ? "aff" : "non"}`;
+        const hue = hueForString(base);
+        return `hsl(${hue} 85% 45%)`;
+      };
+      const alphaizeHsl = (c, a) => c.startsWith("hsl(") ? c.replace(")", ` / ${a})`) : c;
       const buildDatasetsForKey = (key) => {
         const datasets = [];
         const groupLabelsMap = { pg1_max: "PG1", pg2_max: "PG2", pg3_max: "PG3", ip_max: "IP" };
@@ -999,20 +1015,23 @@
         const schoolsToPlot = Array.from(selectedSchools);
         schoolsToPlot.forEach((schoolName, idx) => {
           const data = years.map((year) => {
-            const rows = filteredRows.filter((r) => r.school === schoolName && r.year === year);
-            const vals = rows.map((r) => getGroupValue(r, key)).filter((v) => v != null);
+            const rows = rawRows.filter((r) => r.school === schoolName && r.year === year);
+            const vals = rows
+              .map((r) => getGroupValue(r, key))
+              .filter((v) => v != null);
             if (!vals.length) return null;
             return Math.max(...vals);
           });
           if (data.some((v) => v != null)) {
+            const c = getColorForIndex(idx);
             datasets.push({
               label: `${schoolName} (${groupLabel})`,
               data,
               yAxisID: "yCutoff",
-              tension: 0.25,
-              borderColor: getColorForIndex(idx),
-              pointBackgroundColor: getColorForIndex(idx),
-              pointBorderColor: getColorForIndex(idx),
+              tension: 0,
+              borderColor: c,
+              pointBackgroundColor: c,
+              pointBorderColor: c,
               borderWidth: 3,
               pointRadius: 6,
               pointHoverRadius: 8,
@@ -1041,7 +1060,7 @@
             yCohort: {
               type: "linear",
               position: "right",
-              title: { display: true, text: "Sec 1 intake" },
+              title: { display: true, text: "PSLE cohort" },
               grid: { drawOnChartArea: false }
             }
           },
@@ -1055,7 +1074,7 @@
                   if (v == null) return label;
                   if (ctx.dataset.yAxisID === "yCohort") {
                     const yr = ctx.chart.data.labels[ctx.dataIndex];
-                    return `${yr} Sec 1 intake: ${v.toLocaleString()}`;
+                    return `${yr} PSLE cohort: ${v.toLocaleString()}`;
                   }
                   return `${label}: ${v.toFixed(0)}`;
                 }
@@ -1065,7 +1084,7 @@
         }
       };
 
-      const yearsFromRows = Array.from(new Set(filteredRows.map((r) => r.year).filter((y) => y != null)));
+      const yearsFromRows = Array.from(new Set(rawRows.map((r) => r.year).filter((y) => y != null)));
       const yearsFromCohortIntake = Object.keys(psleCohortByYear).map((y) => parseInt(y, 10) + 1);
       const years = Array.from(new Set([...yearsFromRows, ...yearsFromCohortIntake]))
         .filter((y) => activeYears.has(y) && !excludedYears.has(y))
@@ -1073,23 +1092,64 @@
 
       if (!years.length) return;
 
-      const ctx = document.getElementById("trendChart").getContext("2d");
+      const canvas = document.getElementById("trendChart");
+      if (!canvas) return;
+      const existing = Chart.getChart(canvas);
+      if (existing) existing.destroy();
+      const ctx = canvas.getContext("2d");
       const keysToPlot = [];
+      if (activeGroups.has("ip_max")) keysToPlot.push("ip_max");
       if (activeGroups.has("pg1_max")) keysToPlot.push("pg1_max");
       if (activeGroups.has("pg2_max")) keysToPlot.push("pg2_max");
       if (activeGroups.has("pg3_max")) keysToPlot.push("pg3_max");
-      if (activeGroups.has("ip_max"))  keysToPlot.push("ip_max");
-      const combinedDatasets = keysToPlot.flatMap((k) => buildDatasetsForKey(k));
+      const showAffSplit = topShowAffSplit ? topShowAffSplit.checked : true;
+      const buildDatasetsForKeyAff = (key, aff) => {
+        const datasets = [];
+        const schoolsToPlot = Array.from(selectedSchools);
+        schoolsToPlot.forEach((schoolName, idx) => {
+          const data = years.map((year) => {
+            const rows = rawRows.filter((r) => r.school === schoolName && r.year === year);
+            const vals = rows
+              .filter((r) => {
+                const stream = (r.stream ?? r.affiliated ?? r.is_affiliated ?? r.affiliation ?? "").toString().toLowerCase();
+                const isAff = stream === "affiliated" || stream === "aff" || stream === "a" || stream === "true" || stream === "yes" || stream === "1";
+                return aff ? isAff : !isAff;
+              })
+              .map((r) => getGroupValue(r, key))
+              .filter((v) => v != null);
+            if (!vals.length) return null;
+            return Math.max(...vals);
+          });
+          if (data.some((v) => v != null)) {
+            const c = colorForDataset(schoolName, key, aff);
+            const cStroke = alphaizeHsl(c, 0.55);
+            datasets.push({
+              label: `${schoolName} (${({ pg1_max:"PG1", pg2_max:"PG2", pg3_max:"PG3", ip_max:"IP" })[key] || key}, ${aff ? "Affiliated" : "Non-affiliated"})`,
+              data,
+              yAxisID: "yCutoff",
+              tension: 0,
+              borderColor: cStroke,
+              pointBackgroundColor: alphaizeHsl(c, 0.55),
+              pointBorderColor: alphaizeHsl(c, 0.55),
+              borderWidth: 3,
+              pointRadius: 6,
+              pointHoverRadius: 8,
+              spanGaps: true,
+              fill: false,
+              borderDash: aff ? undefined : [6, 6]
+            });
+          }
+        });
+        return datasets;
+      };
+      let plottedDatasets = [];
+      if (showAffSplit) {
+        plottedDatasets = keysToPlot.flatMap((k) => buildDatasetsForKeyAff(k, true));
+      } else {
+        plottedDatasets = keysToPlot.flatMap((k) => buildDatasetsForKeyAff(k, false));
+      }
 
-      const colorForIndex = (i) => `hsl(${(i * 47) % 360} 85% 45%)`;
-      combinedDatasets.forEach((ds, i) => {
-        const c = colorForIndex(i);
-        ds.borderColor = c;
-        ds.pointBackgroundColor = c;
-        ds.pointBorderColor = c;
-      });
-
-      const allValues = combinedDatasets
+      const allValues = plottedDatasets
         .flatMap((ds) => ds.data)
         .filter((v) => v != null);
       if (allValues.length) {
@@ -1105,10 +1165,10 @@
 
       const cohortData = years.map((y) => psleCohortByYear[y - 1] ?? null);
       const intakeDataset = {
-        label: "Sec 1 intake (students)",
+        label: "PSLE cohort",
         data: cohortData,
         yAxisID: "yCohort",
-        tension: 0.25,
+        tension: 0,
         borderDash: [4, 4],
         borderColor: "#334155",
         pointBackgroundColor: "#334155",
@@ -1117,7 +1177,8 @@
         pointHoverRadius: 6
       };
 
-      chartInstance = new Chart(ctx, { ...cfg, data: { labels: years, datasets: combinedDatasets.concat([intakeDataset]) } });
+      const combinedDatasets = plottedDatasets.concat([intakeDataset]);
+      chartInstance = new Chart(ctx, { ...cfg, data: { labels: years, datasets: combinedDatasets } });
     }
 
     function downloadFilteredCsv() {
@@ -1223,6 +1284,7 @@
     topFilterPG3?.addEventListener("change", updateActiveGroups);
     topFilterPG2?.addEventListener("change", updateActiveGroups);
     topFilterPG1?.addEventListener("change", updateActiveGroups);
+    topShowAffSplit?.addEventListener("change", updateChart);
     cutoffMinSlider?.addEventListener("input", applyFilter);
     cutoffMaxSlider?.addEventListener("input", applyFilter);
   </script>
