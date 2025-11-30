@@ -1,0 +1,525 @@
+school,table_index,year,stream,ip_min,ip_max,pg3_min,pg3_max,pg2_min,pg2_max,pg1_min,pg1_max
+Admiralty,1,2023,Non-affiliated,,,14,21,22,25,25,28
+Admiralty,1,2024,Non-affiliated,,,12,21,21,25,25,28
+Admiralty,1,2025,Non-affiliated,,,15,20,21,25,25,28
+Ahmad Ibrahim,1,2023,Non-affiliated,,,12,17,21,24,25,28
+Ahmad Ibrahim,1,2024,Non-affiliated,,,12,17,21,24,25,28
+Ahmad Ibrahim,1,2025,Non-affiliated,,,12,17,21,23,25,28
+Anderson,1,2023,Non-affiliated,,,5,10,21,22,25,26
+Anderson,1,2024,Non-affiliated,,,4,10,21,22,25,28
+Anderson,1,2025,Non-affiliated,,,5,10,21,23,25,26
+Ang Mo Kio,1,2023,Non-affiliated,,,7,18,21,24,25,28
+Ang Mo Kio,1,2024,Non-affiliated,,,10,16,21,24,25,28
+Ang Mo Kio,1,2025,Non-affiliated,,,10,15,21,24,25,28
+Anglican High,1,2023,Non-affiliated,,,6,14,,,,
+Anglican High,1,2024,Non-affiliated,,,6,12,,,,
+Anglican High,1,2025,Non-affiliated,,,5,11,,,,
+Anglo-Chinese (Barker Road),1,2023,Non-affiliated,,,7,10,21,21,25,28
+Anglo-Chinese (Barker Road),1,2023,Affiliated,,,6,22,21,25,25,27
+Anglo-Chinese (Barker Road),1,2024,Non-affiliated,,,8,10,21,21,25,26
+Anglo-Chinese (Barker Road),1,2024,Affiliated,,,9,22,21,24,25,28
+Anglo-Chinese (Barker Road),1,2025,Non-affiliated,,,5,9,21,21,25,26
+Anglo-Chinese (Barker Road),1,2025,Affiliated,,,10,22,21,25,25,28
+Anglo-Chinese (Independent) (Secondary),1,2023,Non-affiliated,4,7,7,8,,,,
+Anglo-Chinese (Independent) (Secondary),1,2023,Affiliated,4,7,7,13,,,,
+Anglo-Chinese (Independent) (Secondary),1,2024,Non-affiliated,4,7,6,7,,,,
+Anglo-Chinese (Independent) (Secondary),1,2024,Affiliated,4,7,7,13,,,,
+Anglo-Chinese (Independent) (Secondary),1,2025,Non-affiliated,4,6,6,7,,,,
+Anglo-Chinese (Independent) (Secondary),1,2025,Affiliated,4,6,7,13,,,,
+Assumption English,1,2023,Non-affiliated,,,14,22,21,25,25,30
+Assumption English,1,2024,Non-affiliated,,,11,22,21,25,25,29
+Assumption English,1,2025,Non-affiliated,,,7,22,21,25,26,29
+Assumption Pathway,1,2023,Non-affiliated,,,,,,,,
+Assumption Pathway,1,2024,Non-affiliated,,,,,,,,
+Assumption Pathway,1,2025,Non-affiliated,,,,,,,,
+Bartley,1,2023,Non-affiliated,,,14,22,21,25,26,29
+Bartley,1,2024,Non-affiliated,,,9,22,22,25,25,29
+Bartley,1,2025,Non-affiliated,,,7,22,22,25,25,29
+Beatty,1,2023,Non-affiliated,,,11,18,21,24,25,28
+Beatty,1,2024,Non-affiliated,,,12,18,21,24,25,28
+Beatty,1,2025,Non-affiliated,,,12,17,21,25,25,28
+Bedok Green,1,2023,Non-affiliated,,,15,20,21,25,25,27
+Bedok Green,1,2024,Non-affiliated,,,14,20,21,25,25,30
+Bedok Green,1,2025,Non-affiliated,,,14,20,21,25,25,27
+Bedok South,1,2023,Non-affiliated,,,15,20,21,25,25,28
+Bedok South,1,2024,Non-affiliated,,,14,19,21,25,25,30
+Bedok South,1,2025,Non-affiliated,,,13,18,21,25,26,28
+Bedok View,1,2023,Non-affiliated,,,13,18,21,25,26,30
+Bedok View,1,2024,Non-affiliated,,,12,17,21,24,26,29
+Bedok View,1,2025,Non-affiliated,,,11,16,21,24,26,28
+Bendemeer,1,2023,Non-affiliated,,,5,22,23,25,25,29
+Bendemeer,1,2024,Non-affiliated,,,8,22,21,25,26,29
+Bendemeer,1,2025,Non-affiliated,,,8,22,22,25,25,28
+Boon Lay,1,2023,Non-affiliated,,,14,22,21,25,25,30
+Boon Lay,1,2024,Non-affiliated,,,7,22,21,25,25,30
+Boon Lay,1,2025,Non-affiliated,,,8,22,21,25,26,30
+Bowen,1,2023,Non-affiliated,,,11,17,21,23,25,28
+Bowen,1,2024,Non-affiliated,,,10,16,21,24,25,28
+Bowen,1,2025,Non-affiliated,,,10,15,21,23,25,27
+Broadrick,1,2023,Non-affiliated,,,7,22,22,25,26,30
+Broadrick,1,2024,Non-affiliated,,,13,22,21,25,25,30
+Broadrick,1,2025,Non-affiliated,,,7,22,21,25,25,28
+Bukit Batok,1,2023,Non-affiliated,,,12,16,21,24,25,28
+Bukit Batok,1,2024,Non-affiliated,,,11,15,21,23,25,28
+Bukit Batok,1,2025,Non-affiliated,,,11,14,21,23,25,27
+Bukit Merah,1,2023,Non-affiliated,,,12,22,22,25,26,28
+Bukit Merah,1,2024,Non-affiliated,,,9,22,21,25,25,30
+Bukit Merah,1,2025,Non-affiliated,,,7,22,21,25,25,30
+Bukit Panjang Govt. High,1,2023,Non-affiliated,,,5,12,21,22,25,26
+Bukit Panjang Govt. High,1,2024,Non-affiliated,,,7,11,21,22,25,26
+Bukit Panjang Govt. High,1,2025,Non-affiliated,,,6,11,21,22,25,26
+Bukit View,1,2023,Non-affiliated,,,13,19,21,25,25,30
+Bukit View,1,2024,Non-affiliated,,,13,19,21,24,25,30
+Bukit View,1,2025,Non-affiliated,,,14,19,21,24,25,30
+Canberra,1,2023,Non-affiliated,,,12,22,22,25,25,30
+Canberra,1,2024,Non-affiliated,,,15,22,21,25,25,28
+Canberra,1,2025,Non-affiliated,,,11,22,21,25,26,29
+Catholic High (Secondary),1,2023,Non-affiliated,4,8,7,9,,,,
+Catholic High (Secondary),1,2023,Affiliated,4,8,8,12,,,,
+Catholic High (Secondary),1,2024,Non-affiliated,6,8,5,9,,,,
+Catholic High (Secondary),1,2024,Affiliated,6,8,8,12,,,,
+Catholic High (Secondary),1,2025,Non-affiliated,5,7,6,8,,,,
+Catholic High (Secondary),1,2025,Affiliated,5,7,7,12,,,,
+Cedar Girls',1,2023,Non-affiliated,4,8,5,9,,,,
+Cedar Girls',1,2024,Non-affiliated,4,8,4,9,,,,
+Cedar Girls',1,2025,Non-affiliated,4,7,7,9,,,,
+Changkat Changi,1,2023,Non-affiliated,,,15,22,22,25,26,30
+Changkat Changi,1,2024,Non-affiliated,,,5,22,21,25,26,30
+Changkat Changi,1,2025,Non-affiliated,,,6,22,21,25,26,30
+CHIJ Katong Convent,1,2023,Non-affiliated,,,12,16,21,24,25,30
+CHIJ Katong Convent,1,2023,Affiliated,,,11,20,21,25,26,27
+CHIJ Katong Convent,1,2024,Non-affiliated,,,12,15,21,24,25,30
+CHIJ Katong Convent,1,2024,Affiliated,,,11,20,21,25,25,28
+CHIJ Katong Convent,1,2025,Non-affiliated,,,10,13,21,24,26,30
+CHIJ Katong Convent,1,2025,Affiliated,,,13,20,21,25,25,28
+CHIJ Secondary (Toa Payoh),1,2023,Non-affiliated,,,7,11,21,22,25,27
+CHIJ Secondary (Toa Payoh),1,2023,Affiliated,,,7,20,21,25,25,28
+CHIJ Secondary (Toa Payoh),1,2024,Non-affiliated,,,6,10,21,22,25,30
+CHIJ Secondary (Toa Payoh),1,2024,Affiliated,,,6,20,21,25,26,28
+CHIJ Secondary (Toa Payoh),1,2025,Non-affiliated,,,7,9,21,22,25,28
+CHIJ Secondary (Toa Payoh),1,2025,Affiliated,,,7,20,21,25,25,28
+CHIJ St. Joseph's Convent,1,2023,Non-affiliated,,,9,14,21,22,25,26
+CHIJ St. Joseph's Convent,1,2023,Affiliated,,,8,20,21,25,25,28
+CHIJ St. Joseph's Convent,1,2024,Non-affiliated,,,9,14,21,23,25,27
+CHIJ St. Joseph's Convent,1,2024,Affiliated,,,9,20,21,24,25,28
+CHIJ St. Joseph's Convent,1,2025,Non-affiliated,,,10,13,21,23,25,26
+CHIJ St. Joseph's Convent,1,2025,Affiliated,,,9,20,21,25,25,29
+CHIJ St. Nicholas Girls' (Secondary),1,2023,Non-affiliated,4,7,5,8,,,,
+CHIJ St. Nicholas Girls' (Secondary),1,2023,Affiliated,4,7,7,14,,,,
+CHIJ St. Nicholas Girls' (Secondary),1,2024,Non-affiliated,4,7,5,9,,,,
+CHIJ St. Nicholas Girls' (Secondary),1,2024,Affiliated,4,7,8,14,,,,
+CHIJ St. Nicholas Girls' (Secondary),1,2025,Non-affiliated,4,7,6,8,,,,
+CHIJ St. Nicholas Girls' (Secondary),1,2025,Affiliated,4,7,7,14,,,,
+CHIJ St. Theresa's Convent,1,2023,Non-affiliated,,,11,15,21,23,25,30
+CHIJ St. Theresa's Convent,1,2023,Affiliated,,,10,20,21,25,26,29
+CHIJ St. Theresa's Convent,1,2024,Non-affiliated,,,11,14,21,23,25,30
+CHIJ St. Theresa's Convent,1,2024,Affiliated,,,8,20,21,25,26,27
+CHIJ St. Theresa's Convent,1,2025,Non-affiliated,,,8,12,21,23,25,30
+CHIJ St. Theresa's Convent,1,2025,Affiliated,,,11,20,21,25,26,28
+Christ Church,1,2023,Non-affiliated,,,12,18,21,24,25,30
+Christ Church,1,2024,Non-affiliated,,,12,18,21,24,25,28
+Christ Church,1,2025,Non-affiliated,,,12,17,21,24,25,29
+Chua Chu Kang,1,2023,Non-affiliated,,,15,21,21,25,26,28
+Chua Chu Kang,1,2024,Non-affiliated,,,14,20,21,24,25,27
+Chua Chu Kang,1,2025,Non-affiliated,,,9,20,21,25,25,27
+Chung Cheng High (Main),1,2023,Non-affiliated,,,6,11,,,,
+Chung Cheng High (Main),1,2024,Non-affiliated,,,7,10,,,,
+Chung Cheng High (Main),1,2025,Non-affiliated,,,6,9,,,,
+Chung Cheng High (Yishun),1,2023,Non-affiliated,,,4,13,21,22,25,27
+Chung Cheng High (Yishun),1,2024,Non-affiliated,,,6,12,21,22,25,28
+Chung Cheng High (Yishun),1,2025,Non-affiliated,,,4,11,21,22,25,27
+Clementi Town,1,2023,Non-affiliated,,,10,14,21,23,25,27
+Clementi Town,1,2024,Non-affiliated,,,8,13,21,23,25,28
+Clementi Town,1,2025,Non-affiliated,,,9,13,21,23,25,28
+Commonwealth,1,2023,Non-affiliated,,,8,15,21,23,25,27
+Commonwealth,1,2024,Non-affiliated,,,7,13,21,23,25,30
+Commonwealth,1,2025,Non-affiliated,,,8,12,21,23,25,27
+Compassvale,1,2023,Non-affiliated,,,15,19,21,24,25,27
+Compassvale,1,2024,Non-affiliated,,,15,19,21,24,25,27
+Compassvale,1,2025,Non-affiliated,,,14,18,21,24,25,27
+Crescent Girls',1,2023,Non-affiliated,,,6,12,,,,
+Crescent Girls',1,2024,Non-affiliated,,,7,11,21,25,,
+Crescent Girls',1,2025,Non-affiliated,,,7,10,21,23,,
+Crest,1,2023,Non-affiliated,,,,,,,,
+Crest,1,2024,Non-affiliated,,,,,,,,
+Crest,1,2025,Non-affiliated,,,,,,,,
+Damai,1,2023,Non-affiliated,,,6,22,21,25,25,30
+Damai,1,2024,Non-affiliated,,,9,22,22,25,25,30
+Damai,1,2025,Non-affiliated,,,8,22,22,25,26,30
+Deyi,1,2023,Non-affiliated,,,11,18,21,25,26,30
+Deyi,1,2024,Non-affiliated,,,12,17,21,24,25,29
+Deyi,1,2025,Non-affiliated,,,11,16,21,25,25,28
+Dunearn,1,2023,Non-affiliated,,,13,22,22,25,26,30
+Dunearn,1,2024,Non-affiliated,,,12,22,22,25,26,29
+Dunearn,1,2025,Non-affiliated,,,8,22,22,25,25,30
+Dunman High (Secondary),1,2023,Non-affiliated,5,8,,,,,,
+Dunman High (Secondary),1,2024,Non-affiliated,4,8,,,,,,
+Dunman High (Secondary),1,2025,Non-affiliated,4,7,,,,,,
+Dunman,1,2023,Non-affiliated,,,10,15,21,23,25,27
+Dunman,1,2024,Non-affiliated,,,10,14,21,23,25,27
+Dunman,1,2025,Non-affiliated,,,11,13,21,23,25,27
+East Spring,1,2023,Non-affiliated,,,12,22,21,25,26,28
+East Spring,1,2024,Non-affiliated,,,13,22,22,25,25,29
+East Spring,1,2025,Non-affiliated,,,8,22,21,25,26,30
+Edgefield,1,2023,Non-affiliated,,,6,15,21,22,25,27
+Edgefield,1,2024,Non-affiliated,,,7,14,21,22,25,26
+Edgefield,1,2025,Non-affiliated,,,7,13,21,22,25,26
+Evergreen,1,2023,Non-affiliated,,,10,16,21,23,25,30
+Evergreen,1,2024,Non-affiliated,,,8,16,21,23,25,28
+Evergreen,1,2025,Non-affiliated,,,11,14,21,23,25,28
+Fairfield Methodist (Secondary),1,2023,Non-affiliated,,,8,10,21,21,25,26
+Fairfield Methodist (Secondary),1,2023,Affiliated,,,8,20,21,24,25,28
+Fairfield Methodist (Secondary),1,2024,Non-affiliated,,,7,10,21,21,25,27
+Fairfield Methodist (Secondary),1,2024,Affiliated,,,7,20,21,23,25,28
+Fairfield Methodist (Secondary),1,2025,Non-affiliated,,,7,10,21,22,25,27
+Fairfield Methodist (Secondary),1,2025,Affiliated,,,8,20,21,25,25,29
+Fuchun,1,2023,Non-affiliated,,,,,,,,
+Fuchun,1,2024,Non-affiliated,,,,,,,,
+Fuhua,1,2023,Non-affiliated,,,5,14,21,23,25,28
+Fuhua,1,2024,Non-affiliated,,,6,13,21,23,25,27
+Fuhua,1,2025,Non-affiliated,,,7,12,21,23,25,27
+Gan Eng Seng,1,2023,Non-affiliated,,,9,16,21,24,25,27
+Gan Eng Seng,1,2024,Non-affiliated,,,6,15,21,23,25,27
+Gan Eng Seng,1,2025,Non-affiliated,,,9,14,21,23,25,28
+Geylang Methodist (Secondary),1,2023,Non-affiliated,,,9,15,21,23,25,26
+Geylang Methodist (Secondary),1,2023,Affiliated,,,13,21,22,25,25,28
+Geylang Methodist (Secondary),1,2024,Non-affiliated,,,11,14,21,23,25,26
+Geylang Methodist (Secondary),1,2024,Affiliated,,,13,21,22,25,26,28
+Geylang Methodist (Secondary),1,2025,Non-affiliated,,,10,13,21,23,25,28
+Geylang Methodist (Secondary),1,2025,Affiliated,,,13,21,21,25,26,28
+Greendale,1,2023,Non-affiliated,,,11,18,21,23,25,27
+Greendale,1,2024,Non-affiliated,,,7,17,21,23,25,27
+Greendale,1,2025,Non-affiliated,,,9,16,21,23,25,27
+Greenridge,1,2023,Non-affiliated,,,4,22,22,25,25,28
+Greenridge,1,2024,Non-affiliated,,,6,22,22,25,25,28
+Greenridge,1,2025,Non-affiliated,,,5,22,21,25,25,28
+Guangyang,1,2023,Non-affiliated,,,12,22,22,25,26,30
+Guangyang,1,2024,Non-affiliated,,,11,22,22,25,25,30
+Guangyang,1,2025,Non-affiliated,,,8,22,21,25,26,30
+Hai Sing Catholic,1,2023,Non-affiliated,,,8,18,21,24,25,28
+Hai Sing Catholic,1,2024,Non-affiliated,,,13,17,21,24,25,28
+Hai Sing Catholic,1,2025,Non-affiliated,,,9,15,21,23,25,28
+Hillgrove,1,2023,Non-affiliated,,,13,19,21,25,25,28
+Hillgrove,1,2024,Non-affiliated,,,11,18,21,24,25,28
+Hillgrove,1,2025,Non-affiliated,,,11,17,21,23,25,30
+Holy Innocents' High,1,2023,Non-affiliated,,,10,15,21,23,25,27
+Holy Innocents' High,1,2023,Affiliated,,,7,22,22,25,26,28
+Holy Innocents' High,1,2024,Non-affiliated,,,9,14,21,23,25,27
+Holy Innocents' High,1,2024,Affiliated,,,10,22,23,25,26,28
+Holy Innocents' High,1,2025,Non-affiliated,,,10,13,21,22,25,27
+Holy Innocents' High,1,2025,Affiliated,,,13,22,23,25,26,29
+Hougang,1,2023,Non-affiliated,,,10,22,21,24,25,30
+Hougang,1,2024,Non-affiliated,,,16,22,21,24,25,28
+Hougang,1,2025,Non-affiliated,,,14,20,21,24,25,28
+Hua Yi,1,2023,Non-affiliated,,,10,16,21,23,25,26
+Hua Yi,1,2024,Non-affiliated,,,12,15,21,23,25,26
+Hua Yi,1,2025,Non-affiliated,,,6,14,21,22,25,26
+Hwa Chong Institution (Secondary),1,2023,Non-affiliated,4,7,,,,,,
+Hwa Chong Institution (Secondary),1,2024,Non-affiliated,4,7,,,,,,
+Hwa Chong Institution (Secondary),1,2025,Non-affiliated,4,6,,,,,,
+Junyuan,1,2023,Non-affiliated,,,13,22,21,25,25,28
+Junyuan,1,2024,Non-affiliated,,,14,22,22,25,26,28
+Junyuan,1,2025,Non-affiliated,,,13,22,21,24,26,29
+Jurong,1,2023,Non-affiliated,,,7,16,21,24,25,28
+Jurong,1,2024,Non-affiliated,,,12,15,21,23,25,27
+Jurong,1,2025,Non-affiliated,,,11,15,21,23,25,27
+Jurong West,1,2023,Non-affiliated,,,9,18,21,24,25,27
+Jurong West,1,2024,Non-affiliated,,,10,17,21,24,25,28
+Jurong West,1,2025,Non-affiliated,,,9,16,21,24,25,28
+Jurongville,1,2023,Non-affiliated,,,16,20,22,25,25,28
+Jurongville,1,2024,Non-affiliated,,,16,20,21,25,26,28
+Jurongville,1,2025,Non-affiliated,,,16,20,21,25,25,28
+Juying,1,2023,Non-affiliated,,,11,22,21,25,25,30
+Juying,1,2024,Non-affiliated,,,11,22,21,25,25,28
+Juying,1,2025,Non-affiliated,,,11,22,21,25,25,30
+Kent Ridge,1,2023,Non-affiliated,,,12,19,21,24,25,28
+Kent Ridge,1,2024,Non-affiliated,,,13,19,21,24,25,30
+Kent Ridge,1,2025,Non-affiliated,,,13,18,21,24,25,30
+Kranji,1,2023,Non-affiliated,,,10,15,21,23,25,27
+Kranji,1,2024,Non-affiliated,,,11,14,21,23,25,27
+Kranji,1,2025,Non-affiliated,,,7,13,21,23,25,27
+Kuo Chuan Presbyterian,1,2023,Non-affiliated,,,8,10,21,23,26,30
+Kuo Chuan Presbyterian,1,2023,Affiliated,,,10,20,21,25,26,28
+Kuo Chuan Presbyterian,1,2024,Non-affiliated,,,5,10,21,23,25,28
+Kuo Chuan Presbyterian,1,2024,Affiliated,,,6,20,21,25,25,28
+Kuo Chuan Presbyterian,1,2025,Non-affiliated,,,6,9,21,23,25,28
+Kuo Chuan Presbyterian,1,2025,Affiliated,,,9,20,21,25,26,28
+Loyang View,1,2023,Non-affiliated,,,6,22,21,25,26,30
+Loyang View,1,2024,Non-affiliated,,,12,22,21,25,25,30
+Loyang View,1,2025,Non-affiliated,,,13,22,22,25,26,30
+Manjusri,1,2023,Non-affiliated,,,8,22,21,25,26,30
+Manjusri,1,2023,Affiliated,,,17,22,23,25,27,28
+Manjusri,1,2024,Non-affiliated,,,8,22,21,25,25,29
+Manjusri,1,2024,Affiliated,,,15,22,22,25,26,28
+Manjusri,1,2025,Non-affiliated,,,8,22,21,25,26,28
+Manjusri,1,2025,Affiliated,,,10,22,23,25,26,28
+Maris Stella High (Secondary),1,2023,Non-affiliated,,,8,14,,,,
+Maris Stella High (Secondary),1,2023,Affiliated,,,8,16,,,,
+Maris Stella High (Secondary),1,2024,Non-affiliated,,,8,12,,,,
+Maris Stella High (Secondary),1,2024,Affiliated,,,8,16,,,,
+Maris Stella High (Secondary),1,2025,Non-affiliated,,,8,11,,,,
+Maris Stella High (Secondary),1,2025,Affiliated,,,8,16,,,,
+Marsiling,1,2023,Non-affiliated,,,9,22,21,25,26,30
+Marsiling,1,2024,Non-affiliated,,,8,22,21,25,25,29
+Marsiling,1,2025,Non-affiliated,,,15,22,21,25,25,28
+Mayflower,1,2023,Non-affiliated,,,14,18,21,24,25,30
+Mayflower,1,2024,Non-affiliated,,,12,18,21,24,25,30
+Mayflower,1,2025,Non-affiliated,,,12,17,21,25,25,28
+Meridian,1,2023,Non-affiliated,,,15,22,21,24,25,28
+Meridian,1,2024,Non-affiliated,,,13,22,21,24,25,27
+Meridian,1,2025,Non-affiliated,,,12,22,21,25,25,29
+Methodist Girls' (Secondary),1,2023,Non-affiliated,4,6,6,8,,,,
+Methodist Girls' (Secondary),1,2023,Affiliated,4,6,7,17,,,,
+Methodist Girls' (Secondary),1,2024,Non-affiliated,4,6,6,8,,,,
+Methodist Girls' (Secondary),1,2024,Affiliated,4,6,7,17,,,,
+Methodist Girls' (Secondary),1,2025,Non-affiliated,4,6,6,7,,,,
+Methodist Girls' (Secondary),1,2025,Affiliated,4,6,6,17,,,,
+Montfort,1,2023,Non-affiliated,,,15,21,22,25,26,29
+Montfort,1,2023,Affiliated,,,14,22,23,25,26,26
+Montfort,1,2024,Non-affiliated,,,14,21,22,25,27,29
+Montfort,1,2024,Affiliated,,,19,22,23,25,27,28
+Montfort,1,2025,Non-affiliated,,,12,22,22,24,25,28
+Montfort,1,2025,Affiliated,,,18,22,22,25,26,28
+Nan Chiau High,1,2023,Non-affiliated,,,5,12,,,,
+Nan Chiau High,1,2024,Non-affiliated,,,5,11,,,,
+Nan Chiau High,1,2025,Non-affiliated,,,5,10,,,,
+Nan Hua High,1,2023,Non-affiliated,,,6,11,,,,
+Nan Hua High,1,2024,Non-affiliated,,,6,10,,,,
+Nan Hua High,1,2025,Non-affiliated,,,5,10,,,,
+Nanyang Girls' High,1,2023,Non-affiliated,4,7,,,,,,
+Nanyang Girls' High,1,2023,Affiliated,4,8,,,,,,
+Nanyang Girls' High,1,2024,Non-affiliated,4,7,,,,,,
+Nanyang Girls' High,1,2024,Affiliated,4,8,,,,,,
+Nanyang Girls' High,1,2025,Non-affiliated,4,6,,,,,,
+Nanyang Girls' High,1,2025,Affiliated,4,8,,,,,,
+National Junior College (Secondary),1,2023,Non-affiliated,4,7,,,,,,
+National Junior College (Secondary),1,2024,Non-affiliated,4,8,,,,,,
+National Junior College (Secondary),1,2025,Non-affiliated,4,7,,,,,,
+Naval Base,1,2023,Non-affiliated,,,13,20,22,24,25,28
+Naval Base,1,2024,Non-affiliated,,,13,19,21,24,25,28
+Naval Base,1,2025,Non-affiliated,,,13,18,21,24,25,27
+New Town,1,2023,Non-affiliated,,,15,20,21,25,26,30
+New Town,1,2024,Non-affiliated,,,13,20,21,25,25,30
+New Town,1,2025,Non-affiliated,,,13,21,21,25,25,30
+Ngee Ann,1,2023,Non-affiliated,,,6,13,21,21,25,26
+Ngee Ann,1,2023,Affiliated,,,10,16,21,25,26,28
+Ngee Ann,1,2024,Non-affiliated,,,5,12,21,21,25,26
+Ngee Ann,1,2024,Affiliated,,,12,16,21,25,26,28
+Ngee Ann,1,2025,Non-affiliated,,,5,11,21,21,25,27
+Ngee Ann,1,2025,Affiliated,,,12,16,21,25,28,28
+North Vista,1,2023,Non-affiliated,,,13,19,21,24,25,28
+North Vista,1,2024,Non-affiliated,,,13,18,21,24,25,27
+North Vista,1,2025,Non-affiliated,,,10,17,21,24,25,27
+Northbrooks,1,2023,Non-affiliated,,,14,22,21,25,25,27
+Northbrooks,1,2024,Non-affiliated,,,13,22,21,25,25,28
+Northbrooks,1,2025,Non-affiliated,,,15,22,21,24,25,28
+Northland,1,2023,Non-affiliated,,,6,22,22,25,26,28
+Northland,1,2024,Non-affiliated,,,13,22,22,25,25,30
+Northland,1,2025,Non-affiliated,,,8,22,21,25,25,28
+Northlight,1,2023,Non-affiliated,,,,,,,,
+Northlight,1,2024,Non-affiliated,,,,,,,,
+Northlight,1,2025,Non-affiliated,,,,,,,,
+NUS High of Mathematics and Science,1,2023,Non-affiliated,,,,,,,,
+NUS High of Mathematics and Science,1,2024,Non-affiliated,,,,,,,,
+NUS High of Mathematics and Science,1,2025,Non-affiliated,,,,,,,,
+Orchid Park,1,2023,Non-affiliated,,,14,19,21,24,25,27
+Orchid Park,1,2024,Non-affiliated,,,12,18,21,24,25,27
+Orchid Park,1,2025,Non-affiliated,,,12,18,21,23,25,27
+Outram,1,2023,Non-affiliated,,,10,22,22,25,26,30
+Outram,1,2024,Non-affiliated,,,9,22,23,25,26,30
+Outram,1,2025,Non-affiliated,,,9,22,23,25,26,30
+Pasir Ris Crest,1,2023,Non-affiliated,,,14,19,21,24,25,28
+Pasir Ris Crest,1,2024,Non-affiliated,,,7,18,21,24,25,28
+Pasir Ris Crest,1,2025,Non-affiliated,,,11,17,21,24,25,28
+Pasir Ris,1,2023,Non-affiliated,,,13,19,21,24,26,28
+Pasir Ris,1,2024,Non-affiliated,,,10,18,21,23,25,27
+Pasir Ris,1,2025,Non-affiliated,,,13,17,21,23,25,27
+Paya Lebar Methodist Girls' (Secondary),1,2023,Non-affiliated,,,9,13,21,23,25,30
+Paya Lebar Methodist Girls' (Secondary),1,2023,Affiliated,,,5,20,21,25,26,28
+Paya Lebar Methodist Girls' (Secondary),1,2024,Non-affiliated,,,8,11,21,24,25,28
+Paya Lebar Methodist Girls' (Secondary),1,2024,Affiliated,,,6,20,21,25,26,28
+Paya Lebar Methodist Girls' (Secondary),1,2025,Non-affiliated,,,6,10,21,24,25,28
+Paya Lebar Methodist Girls' (Secondary),1,2025,Affiliated,,,7,20,21,25,26,28
+Pei Hwa,1,2023,Non-affiliated,,,9,17,21,23,25,26
+Pei Hwa,1,2024,Non-affiliated,,,8,16,21,23,25,26
+Pei Hwa,1,2025,Non-affiliated,,,7,14,21,22,25,26
+Peicai,1,2023,Non-affiliated,,,13,22,23,25,26,30
+Peicai,1,2024,Non-affiliated,,,10,22,22,25,25,29
+Peicai,1,2025,Non-affiliated,,,13,21,21,25,25,29
+Peirce,1,2023,Non-affiliated,,,11,20,22,25,25,30
+Peirce,1,2024,Non-affiliated,,,14,20,21,25,26,30
+Peirce,1,2025,Non-affiliated,,,15,19,21,25,25,30
+Presbyterian High,1,2023,Non-affiliated,,,8,14,21,23,25,28
+Presbyterian High,1,2024,Non-affiliated,,,7,13,21,23,25,28
+Presbyterian High,1,2025,Non-affiliated,,,7,12,21,24,25,28
+Punggol,1,2023,Non-affiliated,,,15,20,21,24,25,27
+Punggol,1,2024,Non-affiliated,,,14,20,21,23,25,27
+Punggol,1,2025,Non-affiliated,,,13,19,21,23,25,27
+Queenstown,1,2023,Non-affiliated,,,6,22,21,25,26,28
+Queenstown,1,2024,Non-affiliated,,,7,22,21,25,25,28
+Queenstown,1,2025,Non-affiliated,,,11,22,21,25,26,29
+Queensway,1,2023,Non-affiliated,,,12,18,21,24,25,27
+Queensway,1,2024,Non-affiliated,,,12,17,21,24,25,28
+Queensway,1,2025,Non-affiliated,,,12,16,21,24,25,27
+Raffles Girls' (Secondary),1,2023,Non-affiliated,4,6,,,,,,
+Raffles Girls' (Secondary),1,2024,Non-affiliated,4,6,,,,,,
+Raffles Girls' (Secondary),1,2025,Non-affiliated,4,5,,,,,,
+Raffles Institution (Secondary),1,2023,Non-affiliated,4,6,,,,,,
+Raffles Institution (Secondary),1,2024,Non-affiliated,4,6,,,,,,
+Raffles Institution (Secondary),1,2025,Non-affiliated,4,6,,,,,,
+Regent,1,2023,Non-affiliated,,,8,22,22,25,26,30
+Regent,1,2024,Non-affiliated,,,8,22,22,25,26,28
+Regent,1,2025,Non-affiliated,,,10,22,22,25,26,28
+River Valley High (Secondary),1,2023,Non-affiliated,4,9,,,,,,
+River Valley High (Secondary),1,2024,Non-affiliated,4,9,,,,,,
+River Valley High (Secondary),1,2025,Non-affiliated,4,8,,,,,,
+Riverside,1,2023,Non-affiliated,,,7,15,21,23,25,28
+Riverside,1,2024,Non-affiliated,,,6,14,21,23,25,27
+Riverside,1,2025,Non-affiliated,,,8,13,21,23,25,28
+"School of Science and Technology, Singapore",1,2023,Non-affiliated,,,,,,,,
+"School of Science and Technology, Singapore",1,2024,Non-affiliated,,,,,,,,
+"School of Science and Technology, Singapore",1,2025,Non-affiliated,,,,,,,,
+"School of the Arts, Singapore",1,2023,Non-affiliated,,,,,,,,
+"School of the Arts, Singapore",1,2024,Non-affiliated,,,,,,,,
+"School of the Arts, Singapore",1,2025,Non-affiliated,,,,,,,,
+Sembawang,1,2023,Non-affiliated,,,9,22,23,25,25,30
+Sembawang,1,2024,Non-affiliated,,,13,22,21,25,25,30
+Sembawang,1,2025,Non-affiliated,,,12,22,21,25,25,29
+Seng Kang,1,2023,Non-affiliated,,,13,20,21,24,25,28
+Seng Kang,1,2024,Non-affiliated,,,15,20,21,24,25,27
+Seng Kang,1,2025,Non-affiliated,,,15,19,21,24,25,27
+Serangoon Garden,1,2023,Non-affiliated,,,10,22,23,25,26,29
+Serangoon Garden,1,2024,Non-affiliated,,,10,22,22,25,26,29
+Serangoon Garden,1,2025,Non-affiliated,,,8,22,23,25,26,29
+Serangoon,1,2023,Non-affiliated,,,14,22,22,24,25,28
+Serangoon,1,2024,Non-affiliated,,,10,22,22,25,25,28
+Serangoon,1,2025,Non-affiliated,,,15,22,23,24,26,28
+Singapore Chinese Girls',1,2023,Non-affiliated,5,8,7,8,,,,
+Singapore Chinese Girls',1,2023,Affiliated,5,8,8,17,,,,
+Singapore Chinese Girls',1,2024,Non-affiliated,4,8,7,8,,,,
+Singapore Chinese Girls',1,2024,Affiliated,4,8,7,17,,,,
+Singapore Chinese Girls',1,2025,Non-affiliated,4,7,7,8,,,,
+Singapore Chinese Girls',1,2025,Affiliated,4,7,8,17,,,,
+Singapore Sports,1,2023,Non-affiliated,,,,,,,,
+Singapore Sports,1,2024,Non-affiliated,,,,,,,,
+Singapore Sports,1,2025,Non-affiliated,,,,,,,,
+Spectra,1,2023,Non-affiliated,,,,,,,,
+Spectra,1,2024,Non-affiliated,,,,,,,,
+Spectra,1,2025,Non-affiliated,,,,,,,,
+Springfield,1,2023,Non-affiliated,,,14,22,22,25,26,30
+Springfield,1,2024,Non-affiliated,,,11,22,22,25,25,30
+Springfield,1,2025,Non-affiliated,,,11,22,21,25,26,29
+St. Andrew's,1,2023,Non-affiliated,,,9,10,21,22,25,26
+St. Andrew's,1,2023,Affiliated,,,8,22,21,25,25,29
+St. Andrew's,1,2024,Non-affiliated,,,8,10,21,21,25,26
+St. Andrew's,1,2024,Affiliated,,,8,22,22,25,25,28
+St. Andrew's,1,2025,Non-affiliated,,,9,9,21,21,25,27
+St. Andrew's,1,2025,Affiliated,,,8,22,21,25,26,29
+St. Anthony's Canossian,1,2023,Non-affiliated,,,12,16,21,24,25,30
+St. Anthony's Canossian,1,2023,Affiliated,,,11,22,21,25,26,28
+St. Anthony's Canossian,1,2024,Non-affiliated,,,12,15,21,23,25,30
+St. Anthony's Canossian,1,2024,Affiliated,,,11,22,21,25,26,29
+St. Anthony's Canossian,1,2025,Non-affiliated,,,10,14,21,25,25,28
+St. Anthony's Canossian,1,2025,Affiliated,,,10,22,21,25,26,28
+St. Gabriel's,1,2023,Non-affiliated,,,11,18,21,24,26,29
+St. Gabriel's,1,2023,Affiliated,,,14,22,22,25,26,29
+St. Gabriel's,1,2024,Non-affiliated,,,10,17,21,24,25,28
+St. Gabriel's,1,2024,Affiliated,,,13,22,22,25,26,29
+St. Gabriel's,1,2025,Non-affiliated,,,10,15,21,23,25,28
+St. Gabriel's,1,2025,Affiliated,,,10,22,23,25,26,28
+St. Hilda's,1,2023,Non-affiliated,,,12,15,21,23,25,28
+St. Hilda's,1,2023,Affiliated,,,12,22,22,25,26,28
+St. Hilda's,1,2024,Non-affiliated,,,10,14,21,23,25,27
+St. Hilda's,1,2024,Affiliated,,,14,22,22,25,26,28
+St. Hilda's,1,2025,Non-affiliated,,,10,13,21,23,25,27
+St. Hilda's,1,2025,Affiliated,,,6,22,23,25,26,28
+St. Joseph's Institution (Secondary),1,2023,Non-affiliated,4,8,7,10,,,,
+St. Joseph's Institution (Secondary),1,2023,Affiliated,4,8,8,12,,,,
+St. Joseph's Institution (Secondary),1,2024,Non-affiliated,4,7,6,9,,,,
+St. Joseph's Institution (Secondary),1,2024,Affiliated,4,7,5,12,,,,
+St. Joseph's Institution (Secondary),1,2025,Non-affiliated,4,7,6,8,,,,
+St. Joseph's Institution (Secondary),1,2025,Affiliated,4,7,7,12,,,,
+St. Margaret's (Secondary),1,2023,Non-affiliated,,,6,14,21,22,25,30
+St. Margaret's (Secondary),1,2023,Affiliated,,,9,20,21,25,26,29
+St. Margaret's (Secondary),1,2024,Non-affiliated,,,8,12,21,22,25,30
+St. Margaret's (Secondary),1,2024,Affiliated,,,5,20,21,25,25,28
+St. Margaret's (Secondary),1,2025,Non-affiliated,,,8,11,21,25,25,28
+St. Margaret's (Secondary),1,2025,Affiliated,,,9,20,21,25,26,29
+St. Patrick's,1,2023,Non-affiliated,,,13,20,21,23,25,26
+St. Patrick's,1,2023,Affiliated,,,13,20,21,25,25,29
+St. Patrick's,1,2024,Non-affiliated,,,10,14,21,22,25,29
+St. Patrick's,1,2024,Affiliated,,,13,22,21,24,25,29
+St. Patrick's,1,2025,Non-affiliated,,,9,11,21,22,25,27
+St. Patrick's,1,2025,Affiliated,,,13,19,21,25,25,28
+Swiss Cottage,1,2023,Non-affiliated,,,6,11,21,22,25,26
+Swiss Cottage,1,2024,Non-affiliated,,,6,11,21,22,25,26
+Swiss Cottage,1,2025,Non-affiliated,,,6,10,21,22,25,26
+Tampines,1,2023,Non-affiliated,,,10,20,21,24,25,28
+Tampines,1,2024,Non-affiliated,,,15,19,21,24,25,28
+Tampines,1,2025,Non-affiliated,,,14,18,21,24,25,28
+Tanjong Katong Girls',1,2023,Non-affiliated,,,8,14,,,,
+Tanjong Katong Girls',1,2024,Non-affiliated,,,7,13,21,25,,
+Tanjong Katong Girls',1,2025,Non-affiliated,,,7,12,21,23,,
+Tanjong Katong,1,2023,Non-affiliated,,,9,14,,,,
+Tanjong Katong,1,2024,Non-affiliated,,,9,13,21,25,,
+Tanjong Katong,1,2025,Non-affiliated,,,7,12,21,22,,
+Temasek Junior College (Secondary),1,2023,Non-affiliated,5,9,,,,,,
+Temasek Junior College (Secondary),1,2024,Non-affiliated,4,8,,,,,,
+Temasek Junior College (Secondary),1,2025,Non-affiliated,4,8,,,,,,
+Temasek,1,2023,Non-affiliated,,,6,13,21,22,25,26
+Temasek,1,2024,Non-affiliated,,,8,12,21,22,25,27
+Temasek,1,2025,Non-affiliated,,,7,11,21,22,25,26
+Unity,1,2023,Non-affiliated,,,12,20,22,24,25,28
+Unity,1,2024,Non-affiliated,,,13,19,21,24,25,28
+Unity,1,2025,Non-affiliated,,,12,18,21,24,25,27
+Victoria,1,2023,Non-affiliated,5,8,7,10,,,,
+Victoria,1,2024,Non-affiliated,4,8,6,9,,,,
+Victoria,1,2025,Non-affiliated,5,7,6,9,,,,
+West Spring,1,2023,Non-affiliated,,,8,17,21,23,25,27
+West Spring,1,2024,Non-affiliated,,,11,16,21,24,25,27
+West Spring,1,2025,Non-affiliated,,,11,16,21,24,25,27
+Westwood,1,2023,Non-affiliated,,,13,22,22,25,26,30
+Westwood,1,2024,Non-affiliated,,,9,22,22,25,25,29
+Westwood,1,2025,Non-affiliated,,,11,22,21,25,25,28
+Whitley,1,2023,Non-affiliated,,,8,22,23,25,26,30
+Whitley,1,2024,Non-affiliated,,,11,22,22,25,25,30
+Whitley,1,2025,Non-affiliated,,,6,22,23,25,25,30
+Woodgrove,1,2023,Non-affiliated,,,13,20,21,24,25,28
+Woodgrove,1,2024,Non-affiliated,,,14,20,21,24,25,28
+Woodgrove,1,2025,Non-affiliated,,,14,19,21,24,25,28
+Woodlands Ring,1,2023,Non-affiliated,,,15,21,21,25,25,30
+Woodlands Ring,1,2024,Non-affiliated,,,8,22,22,25,26,28
+Woodlands Ring,1,2025,Non-affiliated,,,12,22,21,25,25,29
+Woodlands,1,2023,Non-affiliated,,,11,22,21,25,25,30
+Woodlands,1,2024,Non-affiliated,,,6,22,21,25,25,29
+Woodlands,1,2025,Non-affiliated,,,9,22,21,25,25,28
+Xinmin,1,2023,Non-affiliated,,,8,16,21,23,25,27
+Xinmin,1,2024,Non-affiliated,,,8,15,21,23,25,27
+Xinmin,1,2025,Non-affiliated,,,8,13,21,23,25,26
+Yio Chu Kang,1,2023,Non-affiliated,,,13,22,23,25,25,30
+Yio Chu Kang,1,2024,Non-affiliated,,,8,22,23,25,26,30
+Yio Chu Kang,1,2025,Non-affiliated,,,7,22,23,25,26,30
+Yishun,1,2023,Non-affiliated,,,15,20,21,24,25,28
+Yishun,1,2024,Non-affiliated,,,14,20,21,24,25,28
+Yishun,1,2025,Non-affiliated,,,14,19,21,24,25,27
+Yishun Town,1,2023,Non-affiliated,,,8,13,21,22,25,27
+Yishun Town,1,2024,Non-affiliated,,,5,13,21,22,25,27
+Yishun Town,1,2025,Non-affiliated,,,6,12,21,22,25,27
+Yuan Ching,1,2023,Non-affiliated,,,14,19,21,25,26,29
+Yuan Ching,1,2024,Non-affiliated,,,14,19,21,24,25,28
+Yuan Ching,1,2025,Non-affiliated,,,13,18,21,24,25,28
+Yuhua,1,2023,Non-affiliated,,,15,22,21,25,26,30
+Yuhua,1,2024,Non-affiliated,,,16,22,21,25,25,28
+Yuhua,1,2025,Non-affiliated,,,16,21,21,25,25,28
+Yusof Ishak,1,2023,Non-affiliated,,,9,16,21,22,25,26
+Yusof Ishak,1,2024,Non-affiliated,,,7,15,21,23,25,26
+Yusof Ishak,1,2025,Non-affiliated,,,6,14,21,22,25,26
+Yuying,1,2023,Non-affiliated,,,12,22,23,25,26,29
+Yuying,1,2024,Non-affiliated,,,8,22,23,25,26,29
+Yuying,1,2025,Non-affiliated,,,8,22,21,25,27,29
+Zhenghua,1,2023,Non-affiliated,,,10,20,21,24,25,27
+Zhenghua,1,2024,Non-affiliated,,,12,19,21,24,25,27
+Zhenghua,1,2025,Non-affiliated,,,13,19,21,24,25,27
+Zhonghua,1,2023,Non-affiliated,,,6,14,21,23,25,28
+Zhonghua,1,2024,Non-affiliated,,,7,13,21,23,25,27
+Zhonghua,1,2025,Non-affiliated,,,6,12,21,23,25,27
