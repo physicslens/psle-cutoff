@@ -291,6 +291,80 @@
       border-radius: 12px;
       border: 1px solid var(--border);
     }
+    .dual-range {
+      position: relative;
+      height: 0;
+      margin-top: 0;
+    }
+    .dual-range input[type="range"] {
+      position: absolute;
+      left: 0;
+      right: 0;
+      background: transparent;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .dual-range input.min { top: 0; }
+    .dual-range input.max { top: 16px; }
+    .dual-range input.min::-webkit-slider-thumb { border-color: #10b981; }
+    .dual-range input.max::-webkit-slider-thumb { border-color: #ef4444; }
+    .dual-range input.min::-moz-range-thumb { border-color: #10b981; }
+    .dual-range input.max::-moz-range-thumb { border-color: #ef4444; }
+
+    .dual-slider {
+      position: relative;
+      height: 28px;
+      margin-top: 2px;
+    }
+    .dual-slider-track {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 6px;
+      transform: translateY(-50%);
+      border-radius: 999px;
+      background: #e5e7eb;
+    }
+    .dual-slider-range {
+      position: absolute;
+      top: 50%;
+      height: 6px;
+      transform: translateY(-50%);
+      border-radius: 999px;
+      background: #cbd5e1;
+    }
+    .dual-slider-thumb {
+      position: absolute;
+      top: 50%;
+      width: 18px;
+      height: 18px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+      cursor: pointer;
+    }
+    .dual-slider-thumb.min { border-color: #10b981; }
+    .dual-slider-thumb.max { border-color: #ef4444; }
+    .range-values {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+    .debug-panel {
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 8px;
+      background: #f9fafb;
+      font-size: 0.78rem;
+      max-height: 160px;
+      overflow: auto;
+    }
+    .debug-panel .entry { margin: 2px 0; color: #334155; }
 
     .chart-wrap {
       height: 400px;
@@ -398,10 +472,7 @@
 <body>
   <div class="wrap">
     <h1>Secondary School PSLE Cut-Off Explorer</h1>
-    <p class="subtitle">
-      Load your <code>secondary_psle_cutoff.csv</code>, search by school name,
-      sort columns, and compare school cut-off with PSLE cohort size.
-    </p>
+    
 
     <!-- Posting group filters (top) -->
     <div class="card">
@@ -411,7 +482,9 @@
         <label><input type="checkbox" id="topFilterPG3" checked> PG3</label>
         <label><input type="checkbox" id="topFilterPG2" checked> PG2</label>
         <label><input type="checkbox" id="topFilterPG1" checked> PG1</label>
+        
       </div>
+      
     </div>
 
     <!-- Search + year chips -->
@@ -459,9 +532,25 @@
       <label>4. School list</label>
       <p style="font-size: 0.8rem; color: var(--muted); margin-top: 2px;">
         Use the checkbox to select schools to display in the chart.
-        Includes computed column <code>computed_max_cutoff</code>.
         Click on headers to sort.
       </p>
+      <div style="margin-top: 6px;">
+        <label style="margin-bottom: 4px;">Cut-off range (table filter)</label>
+        <div class="range-values">
+          <span>Min: <strong id="cutoffMinValue">–</strong></span>
+          <span>Max: <strong id="cutoffMaxValue">–</strong></span>
+        </div>
+        <div class="dual-range">
+          <input class="min" type="range" id="cutoffMinSlider" min="0" max="40" value="0" step="1" />
+          <input class="max" type="range" id="cutoffMaxSlider" min="0" max="40" value="40" step="1" />
+        </div>
+        <div class="dual-slider" id="cutoffDualSlider">
+          <div class="dual-slider-track"></div>
+          <div class="dual-slider-range" id="cutoffRangeFill" style="left:0;width:0"></div>
+          <div class="dual-slider-thumb min" id="cutoffThumbMin" style="left:0"></div>
+          <div class="dual-slider-thumb max" id="cutoffThumbMax" style="left:100%"></div>
+        </div>
+      </div>
       <div class="table-wrap">
         <table>
           <thead id="tableHead"></thead>
@@ -506,7 +595,9 @@
         if (topFilterPG2) topFilterPG2.checked = true;
         if (topFilterPG1) topFilterPG1.checked = true;
       }
-      updateChart();
+      
+      buildCutoffSlider();
+      applyFilter();
     }
 
     const statusText = document.getElementById("statusText");
@@ -523,6 +614,19 @@
     const topFilterPG3 = document.getElementById("topFilterPG3");
     const topFilterPG2 = document.getElementById("topFilterPG2");
     const topFilterPG1 = document.getElementById("topFilterPG1");
+    
+    const cutoffMinSlider = document.getElementById("cutoffMinSlider");
+    const cutoffMaxSlider = document.getElementById("cutoffMaxSlider");
+    const cutoffMinValue = document.getElementById("cutoffMinValue");
+    const cutoffMaxValue = document.getElementById("cutoffMaxValue");
+    const cutoffDualSlider = document.getElementById("cutoffDualSlider");
+    const cutoffRangeFill = document.getElementById("cutoffRangeFill");
+    const cutoffThumbMin = document.getElementById("cutoffThumbMin");
+    const cutoffThumbMax = document.getElementById("cutoffThumbMax");
+    let cutoffMin = null;
+    let cutoffMax = null;
+    let cutoffMinLimit = null;
+    let cutoffMaxLimit = null;
 
     function toNumber(x) {
       const v = parseFloat(x);
@@ -532,6 +636,139 @@
     function getGroupValue(row, key) {
       const v = toNumber(row[key]);
       return v != null ? v : null;
+    }
+
+    function computeCutoffForActiveGroups(row) {
+      const keys = [];
+      if (activeGroups.has("ip_max")) keys.push("ip_max");
+      if (activeGroups.has("pg3_max")) keys.push("pg3_max");
+      if (activeGroups.has("pg2_max")) keys.push("pg2_max");
+      if (activeGroups.has("pg1_max")) keys.push("pg1_max");
+      let best = null;
+      for (const k of keys) {
+        const v = toNumber(row[k]);
+        if (v != null) best = best == null ? v : Math.max(best, v);
+      }
+      return best;
+    }
+
+    function rowHasValueInRange(row, min, max) {
+      const keys = [];
+      if (activeGroups.has("ip_max")) keys.push("ip_max");
+      if (activeGroups.has("pg3_max")) keys.push("pg3_max");
+      if (activeGroups.has("pg2_max")) keys.push("pg2_max");
+      if (activeGroups.has("pg1_max")) keys.push("pg1_max");
+      for (const k of keys) {
+        const v = toNumber(row[k]);
+        if (v != null && v >= min && v <= max) return true;
+      }
+      return false;
+    }
+
+    function buildCutoffSlider() {
+      const values = rawRows
+        .map((r) => computeCutoffForActiveGroups(r))
+        .filter((v) => v != null);
+      if (!values.length) {
+        if (cutoffMinSlider) cutoffMinSlider.disabled = true;
+        if (cutoffMaxSlider) cutoffMaxSlider.disabled = true;
+        if (cutoffMinValue) cutoffMinValue.textContent = "–";
+        if (cutoffMaxValue) cutoffMaxValue.textContent = "–";
+        cutoffMin = cutoffMax = cutoffMinLimit = cutoffMaxLimit = null;
+        return;
+      }
+      const min = Math.floor(Math.min(...values));
+      const max = Math.ceil(Math.max(...values));
+      cutoffMinSlider.min = min;
+      cutoffMinSlider.max = max;
+      cutoffMaxSlider.min = min;
+      cutoffMaxSlider.max = max;
+      cutoffMinSlider.value = min;
+      cutoffMaxSlider.value = max;
+      cutoffMinSlider.disabled = false;
+      cutoffMaxSlider.disabled = false;
+      cutoffMinValue.textContent = min;
+      cutoffMaxValue.textContent = max;
+      cutoffMinLimit = min;
+      cutoffMaxLimit = max;
+      cutoffMin = min;
+      cutoffMax = max;
+      updateDualSliderFromValues();
+    }
+
+    function valueToPercent(v) {
+      if (cutoffMinLimit == null || cutoffMaxLimit == null) return 0;
+      const span = cutoffMaxLimit - cutoffMinLimit;
+      if (span <= 0) return 0;
+      return ((v - cutoffMinLimit) / span) * 100;
+    }
+
+    function percentToValue(p) {
+      if (cutoffMinLimit == null || cutoffMaxLimit == null) return cutoffMinLimit ?? 0;
+      const span = cutoffMaxLimit - cutoffMinLimit;
+      return Math.round(cutoffMinLimit + (p / 100) * span);
+    }
+
+    function updateDualSliderFromValues() {
+      if (!cutoffDualSlider) return;
+      const pMin = valueToPercent(cutoffMin);
+      const pMax = valueToPercent(cutoffMax);
+      cutoffThumbMin.style.left = pMin + "%";
+      cutoffThumbMax.style.left = pMax + "%";
+      cutoffRangeFill.style.left = Math.min(pMin, pMax) + "%";
+      cutoffRangeFill.style.width = Math.abs(pMax - pMin) + "%";
+      if (cutoffMinValue) cutoffMinValue.textContent = cutoffMin;
+      if (cutoffMaxValue) cutoffMaxValue.textContent = cutoffMax;
+    }
+
+    function bindDualSlider() {
+      if (!cutoffDualSlider) return;
+      let dragging = null;
+      const onMove = (clientX) => {
+        const rect = cutoffDualSlider.getBoundingClientRect();
+        const p = Math.min(100, Math.max(0, ((clientX - rect.left) / rect.width) * 100));
+        const v = percentToValue(p);
+        if (dragging === "min") {
+          cutoffMin = Math.min(v, cutoffMax);
+        } else if (dragging === "max") {
+          cutoffMax = Math.max(v, cutoffMin);
+        }
+        cutoffMinSlider.value = cutoffMin;
+        cutoffMaxSlider.value = cutoffMax;
+        updateDualSliderFromValues();
+        applyFilter();
+      };
+      const onMouseMove = (e) => onMove(e.clientX);
+      const onTouchMove = (e) => onMove(e.touches[0].clientX);
+      const stopDrag = () => {
+        dragging = null;
+        window.removeEventListener("mousemove", onMouseMove);
+        window.removeEventListener("touchmove", onTouchMove);
+        window.removeEventListener("mouseup", stopDrag);
+        window.removeEventListener("touchend", stopDrag);
+      };
+      const startDrag = (type) => (e) => {
+        dragging = type;
+        window.addEventListener("mousemove", onMouseMove);
+        window.addEventListener("touchmove", onTouchMove, { passive: false });
+        window.addEventListener("mouseup", stopDrag);
+        window.addEventListener("touchend", stopDrag);
+        if (e.type === "mousedown") onMove(e.clientX);
+        if (e.type === "touchstart") onMove(e.touches[0].clientX);
+      };
+      cutoffThumbMin.addEventListener("mousedown", startDrag("min"));
+      cutoffThumbMin.addEventListener("touchstart", startDrag("min"));
+      cutoffThumbMax.addEventListener("mousedown", startDrag("max"));
+      cutoffThumbMax.addEventListener("touchstart", startDrag("max"));
+      cutoffDualSlider.addEventListener("mousedown", (e) => {
+        const rect = cutoffDualSlider.getBoundingClientRect();
+        const p = Math.min(100, Math.max(0, ((e.clientX - rect.left) / rect.width) * 100));
+        const v = percentToValue(p);
+        const distMin = Math.abs(v - cutoffMin);
+        const distMax = Math.abs(v - cutoffMax);
+        dragging = distMin <= distMax ? "min" : "max";
+        startDrag(dragging)(e);
+      });
     }
 
     function enableInputs() {
@@ -583,6 +820,15 @@
       if (!rawRows.length) return;
 
       const activeYearList = Array.from(activeYears);
+      let rangeMin = cutoffMinSlider ? parseFloat(cutoffMinSlider.value) : null;
+      let rangeMax = cutoffMaxSlider ? parseFloat(cutoffMaxSlider.value) : null;
+      if (rangeMin != null && rangeMax != null && rangeMin > rangeMax) {
+        const tmp = rangeMin;
+        rangeMin = rangeMax;
+        rangeMax = tmp;
+      }
+      if (rangeMin != null && cutoffMinValue) cutoffMinValue.textContent = Math.floor(rangeMin);
+      if (rangeMax != null && cutoffMaxValue) cutoffMaxValue.textContent = Math.ceil(rangeMax);
 
       filteredRows = rawRows.filter((r) => {
         if (r.year != null && activeYearList.length) {
@@ -592,6 +838,10 @@
         if (searchTerm) {
           const school = (r.school || "").toString().toLowerCase();
           if (!school.includes(searchTerm)) return false;
+        }
+
+        if (rangeMin != null && rangeMax != null) {
+          if (!rowHasValueInRange(r, rangeMin, rangeMax)) return false;
         }
 
         return true;
@@ -653,7 +903,10 @@
 
       if (!filteredRows.length) return;
 
-      const allHeaders = ["select", ...Array.from(new Set([...headers]))];
+      const groupKeys = ["ip_max", "pg3_max", "pg2_max", "pg1_max"];
+      const nonGroupHeaders = headers.filter((h) => !groupKeys.includes(h) && !/_min$/.test(h) && h !== "table_index");
+      const visibleGroupHeaders = groupKeys.filter((k) => activeGroups.has(k) && headers.includes(k));
+      const allHeaders = ["select", ...nonGroupHeaders, ...visibleGroupHeaders];
 
       const headRow = document.createElement("tr");
       allHeaders.forEach((h) => {
@@ -940,6 +1193,7 @@
           setStatus(`Loaded ${rawRows.length} rows`);
           enableInputs();
           buildYearChips();
+          buildCutoffSlider();
           filteredRows = [...rawRows];
           applySort();
           renderTable();
@@ -949,10 +1203,15 @@
         .catch((err) => {
           console.error(err);
           setStatus("Error loading CSV");
+          if (typeof window.debugLog === "function") {
+            window.debugLog("loadDefaultCsv error", String(err));
+          } else {
+            try { console.log("[DEBUG] loadDefaultCsv error", String(err)); } catch (e) {}
+          }
         });
     }
 
-    document.addEventListener("DOMContentLoaded", loadDefaultCsv);
+    document.addEventListener("DOMContentLoaded", () => { loadDefaultCsv(); bindDualSlider(); });
 
     searchInput.addEventListener("input", (e) => {
       searchTerm = e.target.value.trim().toLowerCase();
@@ -964,6 +1223,9 @@
     topFilterPG3?.addEventListener("change", updateActiveGroups);
     topFilterPG2?.addEventListener("change", updateActiveGroups);
     topFilterPG1?.addEventListener("change", updateActiveGroups);
+    cutoffMinSlider?.addEventListener("input", applyFilter);
+    cutoffMaxSlider?.addEventListener("input", applyFilter);
   </script>
 </body>
 </html>
+   
