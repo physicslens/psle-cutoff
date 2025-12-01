@@ -534,6 +534,9 @@
         Use the checkbox to select schools to display in the chart.
         Click on headers to sort.
       </p>
+      <div class="search-row" style="margin-top:6px;">
+        <button type="button" class="btn btn-outline" id="clearSelectionBtn">Clear selection</button>
+      </div>
       <div style="margin-top: 6px;">
         <label style="margin-bottom: 4px;">Cut-off range (table filter)</label>
         <div class="range-values">
@@ -563,6 +566,7 @@
   <script>
     // PSLE cohort sizes (students sitting PSLE; almost all proceed to secondary)
     const psleCohortByYear = {
+      2021: 39119,
       2022: 37095,
       2023: 38088,
       2024: 40894,
@@ -616,6 +620,7 @@
     const topFilterPG2 = document.getElementById("topFilterPG2");
     const topFilterPG1 = document.getElementById("topFilterPG1");
     const topShowAffSplit = document.getElementById("topShowAffSplit");
+    const clearSelectionBtn = document.getElementById("clearSelectionBtn");
     
     const cutoffMinSlider = document.getElementById("cutoffMinSlider");
     const cutoffMaxSlider = document.getElementById("cutoffMaxSlider");
@@ -782,7 +787,9 @@
       const yearsInData = Array.from(
         new Set([
           ...rawRows.map((r) => r.year).filter((y) => y != null),
-          ...Object.keys(psleCohortByYear).map((y) => parseInt(y, 10) + 1)
+          ...Object.keys(psleCohortByYear)
+            .map((y) => parseInt(y, 10))
+            .filter((y) => y >= 2021 && y <= 2025)
         ])
       ).filter((y) => !excludedYears.has(y)).sort((a, b) => a - b);
 
@@ -849,13 +856,7 @@
         return true;
       });
 
-      // Keep selectedSchools only for schools present after filtering
-      const filteredSchoolSet = new Set(
-        filteredRows.map((r) => r.school).filter((s) => s && s.trim().length)
-      );
-      for (const s of Array.from(selectedSchools)) {
-        if (!filteredSchoolSet.has(s)) selectedSchools.delete(s);
-      }
+      // Preserve selectedSchools across searches; do not prune when filtering
 
       applySort();
       renderTable();
@@ -1085,7 +1086,9 @@
       };
 
       const yearsFromRows = Array.from(new Set(rawRows.map((r) => r.year).filter((y) => y != null)));
-      const yearsFromCohortIntake = Object.keys(psleCohortByYear).map((y) => parseInt(y, 10) + 1);
+      const yearsFromCohortIntake = Object.keys(psleCohortByYear)
+        .map((y) => parseInt(y, 10))
+        .filter((y) => y >= 2021 && y <= 2025);
       const years = Array.from(new Set([...yearsFromRows, ...yearsFromCohortIntake]))
         .filter((y) => activeYears.has(y) && !excludedYears.has(y))
         .sort((a, b) => a - b);
@@ -1163,7 +1166,7 @@
         cfg.options.scales.yCutoff.max = 30;
       }
 
-      const cohortData = years.map((y) => psleCohortByYear[y - 1] ?? null);
+      const cohortData = years.map((y) => (y >= 2021 && y <= 2025) ? (psleCohortByYear[y] ?? null) : null);
       const intakeDataset = {
         label: "PSLE cohort",
         data: cohortData,
@@ -1287,6 +1290,11 @@
     topShowAffSplit?.addEventListener("change", updateChart);
     cutoffMinSlider?.addEventListener("input", applyFilter);
     cutoffMaxSlider?.addEventListener("input", applyFilter);
+    clearSelectionBtn?.addEventListener("click", () => {
+      selectedSchools.clear();
+      renderTable();
+      updateChart();
+    });
   </script>
 </body>
 </html>
